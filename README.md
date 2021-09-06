@@ -1,6 +1,6 @@
 # HIGHER LEVEL PROGRAMMING IN ALX
 ## We Are Dealing With The Following:
-> Python
+> Python &
 > C
 <p align="center">
   <img src="https://lh3.googleusercontent.com/dGNCpJSFY19ck4PkKuIL3ckLjPElmmvUQ\
