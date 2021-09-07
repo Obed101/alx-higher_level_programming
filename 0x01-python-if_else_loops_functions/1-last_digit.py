@@ -7,7 +7,7 @@ if number < 0:
     lastnum = (-1 * number) % 10
     lastnum = -lastnum
 if lastnum > 5:
-    print("{}{} is {} and is is greater than 5".format(str1, number, lastnum))
+print("{}{} is {} and is greater than 5".format(str1, number, lastnum))
 elif lastnum == 0:
     print("{}{} is {} and is 0".format(str1, number, lastnum))
 else:
