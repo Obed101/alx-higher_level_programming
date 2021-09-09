@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import hidden_4
-for fn in dir(hidden_4):
+import sys
+for fn in dir(sys):
     if fn.startswith('__'):
         continue
     print("{}".format(fn))
