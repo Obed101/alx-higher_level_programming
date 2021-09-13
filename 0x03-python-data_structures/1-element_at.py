@@ -2,7 +2,7 @@
 def element_at(my_list, idx):
     ind = len(my_list) - 1
     if idx < 0:
-        return my_list
+        return None
     elif idx > ind:
         return None
     else:
