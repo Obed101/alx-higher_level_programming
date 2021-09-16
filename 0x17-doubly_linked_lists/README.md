@@ -1,6 +1,8 @@
 <h1> C DOUBLY LINKED LISTS</h1>
 <p>This Folder Is a C Project Held In a Python Repo</p>
+
 ```
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -35,4 +37,5 @@ int main(void)
     free(new);
     return (EXIT_SUCCESS);
 }
+
 ```
