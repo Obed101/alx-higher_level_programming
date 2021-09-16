@@ -8,10 +8,10 @@
  * @h: The list
  * Return: Number of elements in the list
  */
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
   if(h != NULL)
     if (sizeof(h) % 4 == 0)
-      printf("%d\n", h);
-  return (sizeof(h) / 4);
+      return (sizeof(h) / 4);
+  return (0);
 }
