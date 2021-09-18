@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <python3.4/Python.h>
 
 /**
  * is_palindrome - checks for palindrome lists
