@@ -11,4 +11,4 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             """ if everything is fine ..."""
-            self.size = size
+            self.__size = size
