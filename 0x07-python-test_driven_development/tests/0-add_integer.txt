@@ -1,0 +1,18 @@
+Testing the Code for python modules
+
+>>> print(add_integer(5, 10))
+15
+
+>>> print(add_integer(-5, 20))
+15
+
+>>> print(add_integer(5.6476, 10.000353))
+15
+
+>>> print(add_integer(2))
+100
+
+>>> print(add_integer(5, "Hello")) # Doctest:+ELLIPSIS
+...
+ValueError: b must be an integer
+>>>
