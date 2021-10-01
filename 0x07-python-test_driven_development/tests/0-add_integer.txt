@@ -1,5 +1,7 @@
 Testing the Code for python modules
 
+>>> from 0-add_integer import add_integer
+
 >>> print(add_integer(5, 10))
 15
 
