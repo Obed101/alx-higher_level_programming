@@ -4,14 +4,14 @@
 
 class Rectangle:
     """defines a rectangle"""
-    __number_of_instances = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """ initializes the 'width' and 'height' attributes """
 
         self.__height = height
         self.__width = width
-        Rectangle.__number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def area(self):
         """a regular method that Calculates the area of a rectangle"""
@@ -72,4 +72,4 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.__number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
