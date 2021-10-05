@@ -4,7 +4,7 @@
 
 class Rectangle:
     """defines a rectangle"""
-    __number_of_instances = 0
+    number_of_instances = 0
     print_symbol = '#'
 
     def __init__(self, width=0, height=0):
@@ -12,7 +12,7 @@ class Rectangle:
 
         self.__height = height
         self.__width = width
-        Rectangle.__number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def area(self):
         """a regular method that Calculates the area of a rectangle"""
@@ -78,10 +78,10 @@ class Rectangle:
 
     def __str__(self):
         if self.__width != 0 and self.__height != 0:
-            sym = '#' * self.__width
+            sym = Rectangle.print_symbol * self.__width
             return '\n'.join(sym for _ in range(self.__height))
 
-    def __repr__(self):    # not for that task
+    def __repr__(self):
         if self.width != 0 and self.height != 0:
             return f"Rectangle({self.width}, {self.height})"
         else:
@@ -89,4 +89,4 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.__number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
