@@ -69,6 +69,6 @@ class Rectangle:
             return f"Rectangle({self.width}, {self.height})"
         else:
             return ""
-    
+
     def __del__(self):
         print("Bye rectangle...")
