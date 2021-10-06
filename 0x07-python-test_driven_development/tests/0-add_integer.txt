@@ -1,20 +1,49 @@
-Testing the Code for python modules
+Usage
+=====
 
->>> from 0-add_integer import add_integer
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
 
->>> print(add_integer(5, 10))
-15
+::
 
->>> print(add_integer(-5, 20))
-15
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
 
->>> print(add_integer(5.6476, 10.000353))
-15
+::
 
->>> print(add_integer(2))
-100
+    >>> add_integer(2, -3)
+    -1
 
->>> print(add_integer(5, "Hello")) # Doctest:+ELLIPSIS
-...
-ValueError: b must be an integer
->>>
+The function also works with floating-point values.
+
+::
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+Note that floats are casted to ints before addition is performed.
+
+::
+
+    >>> add_integer(2.9, 0.2)
+    2
+
+::
+
+    >>> add_integer(-2.9, -0.2)
+    -2
+
+Floating and non-floating point values can be combined.
+
+::
+
+    >>> add_integer(2.3, -3)
+    -1
+
+The second argument is optional - by default, it is 98.
+
+::
+
+    >>> add_integer(2)
+    100
