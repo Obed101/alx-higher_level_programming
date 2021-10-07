@@ -53,7 +53,7 @@ The second argument is optional - by default, it is 98.
     93
 
     >>> negative_infinity = -float('inf')
-    >>> r = add_integer(negative_infinity)
+    >>> r = add_integer(negative_infinity) # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
     >>> print(r)
     93
 	
