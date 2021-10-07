@@ -55,7 +55,7 @@ The second argument is optional - by default, it is 98.
 	>>> negative_infinity = -float('inf')
     >>> r = add_integer(negative_infinity)
     >>> print(r)
-    89
+    93
 	
     >>> positive_infinity = float('inf')
     >>> positive_infinity == float('inf')
