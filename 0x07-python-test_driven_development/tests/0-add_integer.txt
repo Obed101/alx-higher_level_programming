@@ -5,7 +5,7 @@ Usage
 that value is equivalent to using the ``+`` operator.
 
 ::
-
+	>>> import doctest
     >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(2, 3)
     5
@@ -66,4 +66,4 @@ The second argument is optional - by default, it is 98.
     >>> type(r) == float
     False
     >>> print(r)
-    89
+    93
