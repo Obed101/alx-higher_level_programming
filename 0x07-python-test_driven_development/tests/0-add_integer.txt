@@ -54,8 +54,6 @@ The second argument is optional - by default, it is 98.
 
     >>> negative_infinity = -float('inf')
     >>> r = add_integer(negative_infinity) # doctest: +ELLIPSIS
-	...
-    OverflowError: cannot convert float infinity to integer
     >>> print(r)
     93
 	
