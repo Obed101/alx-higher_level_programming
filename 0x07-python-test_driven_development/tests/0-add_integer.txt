@@ -47,3 +47,23 @@ The second argument is optional - by default, it is 98.
 
     >>> add_integer(2)
     100
+    
+    >>> r = add_integer(-5) # doctest: +ELLIPSIS
+    >>> print(r)
+    93
+
+	>>> negative_infinity = -float('inf')
+    >>> r = add_integer(negative_infinity)
+    >>> print(r)
+    89
+	
+    >>> positive_infinity = float('inf')
+    >>> positive_infinity == float('inf')
+    True
+    >>> positive_infinity is float('inf')
+    False
+    >>> r = add_integer(positive_infinity)
+    >>> type(r) == float
+    False
+    >>> print(r)
+    89
