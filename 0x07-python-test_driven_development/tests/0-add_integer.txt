@@ -53,11 +53,12 @@ The second argument is optional - by default, it is 98.
     93
 
     >>> negative_infinity = -float('inf')
-    >>> r = add_integer(negative_infinity)
-    >>> print(r) # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
+    >>> r = add_integer(negative_infinity) # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
 	    ...
     OverflowError:
+    >>> print(r) 
+    93
 	
     >>> positive_infinity = float('inf')
     >>> positive_infinity == float('inf')
