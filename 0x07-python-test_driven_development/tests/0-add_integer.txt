@@ -62,7 +62,7 @@ The second argument is optional - by default, it is 98.
     True
     >>> positive_infinity is float('inf')
     False
-    >>> r = add_integer(positive_infinity)
+
     >>> type(r) == float
     False
     >>> print(r)
