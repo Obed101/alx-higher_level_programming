@@ -3,21 +3,9 @@
 
 
 def text_indentation(text):
-    """This function prints a string with many new lines
-    (see module documentation)
-
-    some edge cases:
-    >>> text_indentation("name: alx.holberton")
-    name:
-    $
-    alx.
-    $
-    holberton
-    >>>
-    """
-    if type(text) is not str:
+    """Format text by splitting lines at special characters"""
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for a in text:
-        print(a.strip(), end='')
-        if a == '.' or a == '?' or a == ':':
-            print("\n")
+    for char in '.:?':
+        text = text.replace(char, char + '\n\n')
+    print(*(ln.strip() for ln in (text + '\n').splitlines()), sep='\n', end='')
