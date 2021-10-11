@@ -11,13 +11,8 @@ class MyInt(int):
 
     def __eq__(self, other):
         """handles the == operator"""
-        if self.num != other:
-            return True
-        else:
-            return False
+        return self.num.__ne__(other)
 
     def __ne__(self, other):
-        if self.num < 0:
-            return True if self.num != other else False
-        if self.num == other:
-            return True
+        """reverts != operator"""
+        return self.num.__eq__(other)
