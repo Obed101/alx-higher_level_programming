@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Inheritance module"""
 
-import 7-base_geometry
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
 class Rectangle(BaseGeometry):
     """Defines a rectangle"""
     def __init__(self, width, height):
