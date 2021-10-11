@@ -10,4 +10,5 @@ class MyInt(int):
         return True if self != other else False
     
     def __ne__(self, other):
-        return True if self != other else False
+        """reverts the != operator"""
+        return True if self == other else False
