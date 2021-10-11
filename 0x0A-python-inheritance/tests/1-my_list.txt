@@ -1,5 +1,7 @@
 CHECKING THE CODE IN PARENT DIRECTORY
 
+MyList = __import__('1-my_list').MyList
+
 Documentation checker:
 
     >>> len(__import__("1-my_list").__doc__) > 5
