@@ -4,22 +4,10 @@
 
 class MyInt(int):
     """This class creates a personalized int"""
-    def __init__(self, num):
-        """initializes the class"""
-        self.num = num
-        super().__init__()
 
     def __eq__(self, other):
         """handles the == operator"""
-        if self.num != other:
-            return True
-        else:
-            return False
-        # return not other
+        return True if self != other else False
     
     def __ne__(self, other):
-        if self.num < 0:
-            return True if self.num != other else False
-        if self.num == other:
-            return True
-        return False
+        return True if self != other else False
