@@ -8,11 +8,10 @@ class Square(Rectangle):
     """ Square inherits features of Rectangle """
 
     def __init__(self, size):
-        """ instantiation initializer """
         self.integer_validator("size", size)
-        super().__init__(self, size)
         self.__size = size
-
+        super().__init__(self.__size, self.__size)
+    
     def __str__(self):
         """prints a string of how the area is calculated"""
         return "[Square] {}/{}".format(self.__size, self.__size)
