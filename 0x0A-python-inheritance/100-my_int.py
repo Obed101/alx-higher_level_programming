@@ -21,4 +21,3 @@ class MyInt(int):
             return True if self.num != other else False
         if self.num == other:
             return True
-        return False
