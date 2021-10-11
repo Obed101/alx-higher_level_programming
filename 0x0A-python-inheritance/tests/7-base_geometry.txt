@@ -2,7 +2,135 @@ Testing The 7-base_geometry.txt file
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
+
+============================================+===========================
+Tese_case 1: value = integer
+
 >>> bg.area() # doctest +ELLIPSIS
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
+
+
+
+	>>> b = bg()
+	>>> b.integer_validator('number', 15)
+
+
+	
+
+	>>> b = bg()
+	>>> b.integer_validator('number', '15') # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: number must be an integer
+
+
+  
+
+	>>> b = bg()
+	>>> b.integer_validator('number', -1) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	ValueError: number must be greater than 0
+
+
+	
+
+	>>> b = bg()
+	>>> b.integer_validator('number', 0) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	ValueError: number must be greater than 0
+
+
+       >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+
+module docstring:
+         >>> m = __import__("7-base_geometry").__doc__
+         >>> len(m) > 1
+         True
+
+
+
+class docstring:
+         >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(c) > 1
+         True
+
+
+
+	 >>> mod1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	 >>> len(mod1) > 1
+	 True
+	 >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+         >>> len(mod2) > 1
+         True
+
+
+	 >>> b.area()
+	 Traceback (most recent call last):
+	 ...
+	 Exception: area() is not implemented
+
+
+
+	 >>> b.area(1)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: area() takes 1 positional argument but 2 were given
+
+
+
+	 >>> b.integer_validator("integer", 1)
+
+
+
+	 >>> b.integer_validator("integer", 0)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
+
+
+
+	 >>> b.integer_validator("integer", -5)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
+
+
+
+	 >>> b.integer_validator("bool", True)
+	 Traceback (most recent call last):
+         ...
+         TypeError: bool must be an integer
+	 >>> b.integer_validator("float", 1.5)
+         Traceback (most recent call last):
+         ...
+         TypeError: float must be an integer
+	 >>> b.integer_validator("complex", complex(1, 1))
+         Traceback (most recent call last):
+         ...
+         TypeError: complex must be an integer
+   >>> b.integer_validator()
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+
+	 >>> b.integer_validator("integer")
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+
+	 >>> b.integer_validator("integer", 1, 2)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+   
+   >>> a = b()
+   
