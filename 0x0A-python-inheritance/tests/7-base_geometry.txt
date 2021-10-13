@@ -115,7 +115,7 @@ class docstring:
          ...
          TypeError: complex must be an integer
 	 
-   >>> # bg.integer_validator() # doctest: +ELLIPSIS
+         bg.integer_validator() # doctest: +ELLIPSIS
 	 Traceback (most recent call last):
          ...
 	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
