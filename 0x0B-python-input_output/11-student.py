@@ -23,9 +23,9 @@ class Student:
             if key in attrs:
                 my_dict[key] = value
         return my_dict
-    
+
     def reload_from_json(self, json):
-        """changes all attrs of student"""        
+        """changes all attrs of student"""
         for key, value in json.items():
             if key in self.__dict__:
                 self.__dict__[key] = value
