@@ -95,10 +95,10 @@ class docstring:
 
 
 
-	 >>> bg.integer_validator("integer", -5) # doctest: +ELLIPSIS
+	 >>> bg.integer_validator("age", -5) # doctest: +ELLIPSIS
 	 Traceback (most recent call last):
          ...
-         ValueError: integer must be greater than 0
+         ValueError: age must be greater than 0
 
 
 
@@ -114,7 +114,8 @@ class docstring:
          Traceback (most recent call last):
          ...
          TypeError: complex must be an integer
-   >>> bg.integer_validator() # doctest: +ELLIPSIS
+	 
+   >>> # bg.integer_validator() # doctest: +ELLIPSIS
 	 Traceback (most recent call last):
          ...
 	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
