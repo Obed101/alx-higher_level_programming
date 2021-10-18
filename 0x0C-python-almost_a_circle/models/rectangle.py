@@ -76,14 +76,44 @@ class Rectangle(Base):
         """calculates the area of the Rectangle"""
         return self.__height * self.__width
 
-    def display(self):
-        """ prints the rectangle instance with '#' """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end='')
-            print()
+    # def display(self):
+    #     """ prints the rectangle instance with '#' """
+    #     for i in range(self.__height):
+    #         for j in range(self.__width):
+    #             print("#", end='')
+    #         print()
 
     def __str__(self):
         """prints the attributes in a string format"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"\
                " - {self.__width}/{self.__height}"
+
+    def display(self):
+        """prints the rectangle instance with the # character"""
+        buffer = [' ' * self.x + '#' * self.width for _ in range(self.height)]
+        print('\n' * self.y + '\n'.join(buffer))
+
+    def update(self, *args, **kwargs):
+        """assigns argument to each attribute in particular order"""
+        i = 0
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        if len(args) > 0:
+            for attr in attributes:
+                if i == len(args):
+                    break
+                setattr(self, attr, args[i])
+        else:
+            for key, value in kwargs.items():
+                if key not in attributes:
+                    continue
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns a dict form of an instance"""
+        return {
+                'id': self.id,
+                'width': self.__width,
+                'height': self.__height,
+                'x': self.__x,
+                'y': self.__y
+                }
