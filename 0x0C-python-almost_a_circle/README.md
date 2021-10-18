@@ -1,2 +1,3 @@
-<p align="center">EVERYTHING IN PYTHON IS FOUND HERE</p>
-* Summarising All Python Code
+<h1><p align="center">EVERYTHING IN PYTHON IS IMPLEMENTED HERE</p></h1>
+
+`Summarising All Python Code`
