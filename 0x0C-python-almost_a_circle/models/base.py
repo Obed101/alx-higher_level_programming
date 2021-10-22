@@ -21,18 +21,15 @@ class Base:
         Args:
             list_dictionaries (list): A list of dictionaries.
         Returns:
-            str: A list of dictionaries.
+            str: A list of dictionaries if its not none.
         """
-        if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
-        if len(list_dictionaries) <= 0:
-            return "[]"
-        return json.JSONEncoder().encode(list_dictionaries)
+        if list_dictionaries is None:
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
         """returns a list object of the json string
-        represenation json_string
         """
         if json_string is None or len(json_string) <= 0:
             return []
