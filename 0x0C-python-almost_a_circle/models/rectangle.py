@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Contains the "Rectangle" class
+This module cares for everything that is done with Rectangle
 """
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """A representation of a rectangle"""
+    """The Rectangle Class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes the rectangle"""
         self.width = width
@@ -18,22 +18,22 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """getter od width"""
+        """get width value"""
         return self.__width
 
     @property
     def height(self):
-        """getter of height"""
+        """get height value"""
         return self.__height
 
     @property
     def x(self):
-        """getter of x"""
+        """get x value"""
         return self.__x
 
     @property
     def y(self):
-        """getter of y"""
+        """get y value"""
         return self.__y
 
     @width.setter
@@ -73,17 +73,17 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """calculates the area of the rectangle"""
+        """calculating the area of the rectangle"""
         return self.__width * self.__height
 
     def display(self):
-        """print a display of the rectangle"""
+        """printing a rectangle"""
         print(("\n" * self.__y) +
               "\n".join(((" " * self.__x) + ("#" * self.__width))
                         for i in range(self.__height)))
 
     def __str__(self):
-        """informal string representation of the rectangle"""
+        """string representation of the rectangle"""
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
                                                                  self.__x,
                                                                  self.__y,
@@ -91,7 +91,7 @@ class Rectangle(Base):
                                                                  self.__height)
 
     def update(self, *args, **kwargs):
-        """updates multiple attributes"""
+        """updating with variable args"""
         if len(args):
             for i, a in enumerate(args):
                 if i == 0:
@@ -117,7 +117,7 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """dictionary representation of a Rectangle"""
+        """dictionary representation of The Rectangle"""
         d = {}
         d["id"] = self.id
         d["width"] = self.width
