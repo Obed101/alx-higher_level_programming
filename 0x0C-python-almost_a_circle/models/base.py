@@ -17,11 +17,11 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Creates the JSON representation of a list of dictionaries.
+        """Creates the 'JSON' representation of a list of dictionaries.
         Args:
             list_dictionaries (list): A list of dictionaries.
         Returns:
-            str: A JSON representation of the list of dictionaries.
+            str: A list of dictionaries.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
@@ -119,10 +119,6 @@ class Base:
         t.hideturtle()
         window.exitonclick()
 
-    # ***************** End of Static Methods *****************
-
-    # ***************** Class Methods *****************
-
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
@@ -148,17 +144,14 @@ class Base:
         """creates new object of type cls and
         initialized with values in dictionary
         """
-        # check who is calling
         global new_obj
         if cls.__name__ == 'Base':
             return
         elif cls.__name__ == 'Square':
-            # creating dummy instance
             new_obj = cls(1)
         elif cls.__name__ == 'Rectangle':
             new_obj = cls(1)
 
-        # updating it using the update method
         new_obj.update(**dictionary)
         return new_obj
 
@@ -172,7 +165,6 @@ class Base:
         else:
             return
 
-        # if dosen't exist or is not a file return empty list
         if not path.exists(file_name) or not path.isfile(file_name):
             return []
 
