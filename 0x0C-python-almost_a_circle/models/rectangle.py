@@ -85,8 +85,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """prints the attributes in a string format"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"\
-               " - {self.__width}/{self.__height}"
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def display(self):
         """prints the rectangle instance with the # character"""
