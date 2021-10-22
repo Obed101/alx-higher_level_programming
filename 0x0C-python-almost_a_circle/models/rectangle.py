@@ -78,7 +78,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """prints the attributes in a string format"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def display(self):
         """prints the rectangle instance with the # character"""
@@ -101,11 +105,11 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """returns a dict form of an instance"""
-        return {
-                'id': self.id,
-                'width': self.__width,
-                'height': self.__height,
-                'x': self.__x,
-                'y': self.__y
-                }
+        """representaion in dict form"""
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d
