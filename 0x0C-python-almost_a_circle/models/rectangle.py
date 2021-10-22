@@ -1,73 +1,71 @@
 #!/usr/bin/python3
 """
-Rectangle module for all rectangle tasks
+Contains the "Rectangle" class
 """
 
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
-    """A rectangle class that inherits from base"""
-
+    """A representation of a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """instance initializer"""
+        """Initializes the rectangle"""
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = int(x)
-        self.__y = int(y)
 
     @property
     def width(self):
-        """calculates the width"""
+        """getter od width"""
         return self.__width
+
+    @property
+    def height(self):
+        """getter of height"""
+        return self.__height
+
+    @property
+    def x(self):
+        """getter of x"""
+        return self.__x
+
+    @property
+    def y(self):
+        """getter of y"""
+        return self.__y
 
     @width.setter
     def width(self, value):
-        """sets value of the width"""
+        """setter of width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        else:
-            self.__width = value
-
-    @property
-    def height(self):
-        """returns the value of height"""
-        return self.__height
+        self.__width = value
 
     @height.setter
     def height(self, value):
-        """sets value to the height"""
+        """setter of height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
-    @property
-    def x(self):
-        """returns the value of x"""
-        return self.__x
-
     @x.setter
     def x(self, value):
-        """sets value to the x"""
+        """setter of x"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
-    @property
-    def y(self):
-        """returns the value of y"""
-        return self.__y
-
     @y.setter
     def y(self, value):
-        """sets value to the y"""
+        """setter of y"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -75,39 +73,51 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """calculates the area of the Rectangle"""
-        return self.__height * self.__width
-
-    def __str__(self):
-        """prints the attributes in a string format"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.__x,
-                                                       self.__y,
-                                                       self.__width,
-                                                       self.__height)
+        """calculates the area of the rectangle"""
+        return self.__width * self.__height
 
     def display(self):
-        """prints the rectangle instance with the # character"""
-        buffer = [' ' * self.x + '#' * self.width for _ in range(self.height)]
-        print('\n' * self.y + '\n'.join(buffer))
+        """print a display of the rectangle"""
+        print(("\n" * self.__y) +
+              "\n".join(((" " * self.__x) + ("#" * self.__width))
+                        for i in range(self.__height)))
+
+    def __str__(self):
+        """informal string representation of the rectangle"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.__x,
+                                                                 self.__y,
+                                                                 self.__width,
+                                                                 self.__height)
 
     def update(self, *args, **kwargs):
-        """assigns argument to each attribute in particular order"""
-        i = 0
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        if len(args) > 0:
-            for attr in attributes:
-                if i == len(args):
-                    break
-                setattr(self, attr, args[i])
+        """updates multiple attributes"""
+        if len(args):
+            for i, a in enumerate(args):
+                if i == 0:
+                    self.id = a
+                elif i == 1:
+                    self.width = a
+                elif i == 2:
+                    self.height = a
+                elif i == 3:
+                    self.x = a
+                elif i == 4:
+                    self.y = a
         else:
-            for key, value in kwargs.items():
-                if key not in attributes:
-                    continue
-                setattr(self, key, value)
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """representaion in dict form"""
+        """dictionary representation of a Rectangle"""
         d = {}
         d["id"] = self.id
         d["width"] = self.width
