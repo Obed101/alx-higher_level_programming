@@ -23,8 +23,8 @@ class Base:
         Returns:
             str: A list of dictionaries if its not none.
         """
-        if list_dictionaries is None:
-            list_dictionaries = []
+        if list_dictionaries <= 0:
+            return '[]'
         return json.dumps(list_dictionaries)
 
     @staticmethod
