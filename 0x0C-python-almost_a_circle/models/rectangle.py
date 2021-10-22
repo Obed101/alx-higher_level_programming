@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Rectangle module"""
+"""Rectangle module for all rectangle tasks"""
 
 from base import Base
 
