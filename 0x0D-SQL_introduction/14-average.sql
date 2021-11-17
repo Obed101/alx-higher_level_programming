@@ -1,2 +1,2 @@
 -- average score calculator
-SELECT AVERAGE(score) FROM second_table AS average
+SELECT AVG(score) FROM second_table AS average
