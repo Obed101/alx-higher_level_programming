@@ -8,5 +8,5 @@ if (argument !== NaN){
     iterator++;
   }
 } else {
-    console.log('Missing number of occurrences');
+  console.log('Missing number of occurrences');
 }
