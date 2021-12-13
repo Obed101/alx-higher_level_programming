@@ -1,9 +1,8 @@
 #!/usr/bin/node
 
-import { argv } from 'process';
-let converted = Number(argv[1]);
-if (converted === NaN){
-    console.log('Not a number');
-} else {
+let converted = Number(process.argv[1]);
+if (converted) {
     console.log('My number: '+ converted);
+} else {
+    console.log('Not a number');
 }
