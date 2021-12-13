@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-let process = require(process);
-let args = process.argv;
-let one = args[1];
-let two = args[2];
+const one = process.argv[2];
+const two = process.argv[3];
 console.log(one + ' is ' two);
