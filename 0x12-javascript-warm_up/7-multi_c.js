@@ -1,5 +1,4 @@
 #!/usr/bin/node
-const process = require('process');
 
 let iterator = 1;
 let argument = Number(process.argv[1]);
