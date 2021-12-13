@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+import { argv } from 'process';
 let iterator = 1;
 let argument = Number(argv[1]);
 if (argument !== NaN){
