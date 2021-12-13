@@ -1,19 +1,11 @@
 #!/usr/bin/node
-const args = process.argv;
-let largest = 0;
-let next = 0;
-let num;
-if (args.length < 4) {
+// finding the first runner up
+const size = process.argv.length;
+if (size < 4) {
   console.log('0');
 } else {
-  for (let i = 2; i < args.length; i++) {
-    num = Number(args[i]);
-    if (num > largest) {
-      next = largest;
-      largest = num;
-    } else if (num > secBig) {
-      next = num;
-    }
-  }
-  console.log(next);
+  const biggest = process.argv.slice(2);
+
+  biggest.sort((x, y) => y - x);
+  console.log(big[1]);
 }
