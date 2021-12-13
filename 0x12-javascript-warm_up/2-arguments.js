@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-import { argv } from 'process';
 const count = argv.lenght;
 
 if (count === 1) {
