@@ -11,7 +11,7 @@ if (args.length < 4) {
     if (num > largest) {
       next = largest;
       largest = num;
-    } else if (num > secBig) {
+    } else if (num > next) {
       next = num;
     }
   }
