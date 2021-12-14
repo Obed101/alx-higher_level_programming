@@ -18,7 +18,6 @@ class Rectangle {
     const temp = this.height;
     this.height = this.width;
     this.width = temp;
-    //temp = null;
   }
 
   double () {
