@@ -1,6 +1,6 @@
 #!/usr/bin/node
 let iterator = 1;
-let argument = Number(process.argv[2]);
+const argument = Number(process.argv[2]);
 if (argument) {
   while (iterator <= argument) {
     console.log('C is fun');
