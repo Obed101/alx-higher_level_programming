@@ -1,7 +1,6 @@
 #!/usr/bin/node
 const Square1 = require('./5square')
 class Square extends Square1 {
-
   charPrint (c) {
     if (c) {
       for (let i = 0; i < this.size; i++) {
