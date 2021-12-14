@@ -1,16 +1,16 @@
 #!/usr/bin/node
-const Square1 = require('./5-square');
+const oldSquare = require('./5-square');
 
-class Square extends Square1 {
+class Square extends oldSquare {
   charPrint (c) {
-    let cp = c;
+    let k = c;
     if (!c) {
-      cp = 'X';
+      k = 'X';
     }
-    for (let i = 0; i < this.size; i++) {
-      console.log(cp.repeat(this.size));
+    for (let i = 0; i < this.width; i++) {
+      console.log(k.repeat(this.width));
     }
   }
 }
 
-module.exports Square;
+module.exports = Square;
