@@ -4,8 +4,8 @@ class Rectangle {
   constructor (w, h) {
     if (w && h) {
       this.width = w;
-    this.height = h;
+      this.height = h;
     }
   }
 }
-modules.exports = Rectangle;
+module.exports = Rectangle;
