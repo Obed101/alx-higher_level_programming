@@ -2,9 +2,9 @@
 
 class Rectangle {
   constructor (w, h) {
-    if (w && h) {
+    if (w > 0 && h > 0) {
       this.width = w;
-    this.height = h;
+      this.height = h;
     }
   }
 
@@ -13,12 +13,14 @@ class Rectangle {
       console.log('X'.repeat(this.width));
     }
   }
+
   rotate () {
     const temp = this.height;
     this.height = this.width;
     this.width = temp;
-    temp = null;
+    //temp = null;
   }
+
   double () {
     this.height *= 2;
     this.width *= 2;
