@@ -2,11 +2,9 @@
 
 class Rectangle {
   constructor (w, h) {
-    this.width = w;
+    if (w && h) {
+      this.width = w;
     this.height = h;
-    if (!w || !h) {
-      this.width = undefined;
-      this.height = undefined;
     }
   }
 
@@ -16,7 +14,7 @@ class Rectangle {
     }
   }
   rotate () {
-    temp = this.height;
+    const temp = this.height;
     this.height = this.width;
     this.width = temp;
     temp = null;
