@@ -19,12 +19,12 @@ def select_states():
     sql_command = 'SELECT * FROM states ORDER BY id ASC;'
     cur.execute(sql_command)
     result = cur.fetchall()
-    cur.close()
-    connection.close()
-    
+
     if result:
         for states in result:
             print(states)
+    cur.close()
+    connection.close()
 
 
 if __name__ == '__main__':
