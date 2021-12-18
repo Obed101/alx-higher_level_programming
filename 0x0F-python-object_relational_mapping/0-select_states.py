@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module uses the MySQLdb module to execute SQL commands.
-(Best way to access database in python) 
+(Best way to access database in python)
 """
 import sys
 import MySQLdb as sql
