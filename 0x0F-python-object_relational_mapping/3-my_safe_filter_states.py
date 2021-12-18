@@ -19,6 +19,7 @@ def select_states():
     cur = connection.cursor()
     sql_command = '''SELECT * FROM states WHERE
     name = %s ORDER BY id ASC;'''
+    name = (name,)
     cur.execute(sql_command, name)
     result = cur.fetchall()
 
