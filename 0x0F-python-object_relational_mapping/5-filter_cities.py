@@ -12,15 +12,17 @@ def filter_cities():
     """This method Uses mySQL queries to filter cities"""
     host = "localhost"
     port = 3306
-    user = sys.argv[1]
+    username = sys.argv[1]
     passwd = sys.argv[2]
-    connection = sql.connect(host=host, user=user,
-                             passwd=passwd, db=sys.argv[3], port=port)
+    database = sys.argv[3]
+    connection = sql.connect(host=host, user=username,
+                             passwd=passwd, db=database, port=port)
     cur = connection.cursor()
-    state_name = sys.argv[4]
-    sql_cmd1 = 'SELECT city.name FROM cities LEFT '
-    sql_cmd2 = 'JOIN states ON cities.state_id = states.id ORDER BY cities.id;'
-    cur.execute(sql_cmd1 + sql_cmd2)
+    state_name = ([sys.argv[4]],)
+    sql_cmd1 = 'SELECT city.name FROM cities INNER '
+    sql_cmd2 = 'JOIN states ON states.id = cities.states_id '
+    sql_cmd3 = 'WHERE states.name = %s.id ORDER BY cities.id;'
+    cur.execute(sql_cmd1 + sql_cmd2 + sql_cmd3, state_name)
     result = cur.fetchall()
 
     if result:
