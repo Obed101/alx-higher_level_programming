@@ -18,7 +18,7 @@ def select_states():
     connection = sql.connect(host=host, user=user,
                              passwd=passwd, db=sys.argv[3], port=port)
     cur = connection.cursur()
-    sql_command = 'SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;'
+    sql_command = 'SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;'
     cur.execute(sql_command)
     result = cur.fetchall()
 
