@@ -18,16 +18,17 @@ def filter_cities():
     connection = sql.connect(host=host, user=username,
                              passwd=passwd, db=database, port=port)
     cur = connection.cursor()
-    state_name = ([sys.argv[4]],)
-    sql_cmd1 = 'SELECT city.name FROM cities INNER '
-    sql_cmd2 = 'JOIN states ON states.id = cities.states_id '
-    sql_cmd3 = 'WHERE states.name = %s.id ORDER BY cities.id;'
-    cur.execute(sql_cmd1 + sql_cmd2 + sql_cmd3, state_name)
+#    state_name = [sys.argv[4]]
+    sql_cmd1 = 'SELECT cities.name FROM cities INNER '
+    sql_cmd2 = 'JOIN states ON states.id = cities.state_id '
+    sql_cmd3 = 'WHERE states.name = %s ORDER BY cities.id;'
+    cur.execute(sql_cmd1 + sql_cmd2 + sql_cmd3, [sys.argv[4]])
     result = cur.fetchall()
 
     if result:
         for states in result:
-            print(states)
+            print(states, end="")
+        print()
     cur.close()
     connection.close()
 
