@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-"""This module filter states table and select some content"""
+"""
+This module filter states table and select some content
+"""
 
 import sys
 import MySQLdb as sql
 
 
 def select_states():
-    """This method Uses mySQL queries to select states"""
+    """
+    This method Uses mySQL queries to select states
+    """
     host = "localhost"
     port = 3306
     user = sys.argv[1]
