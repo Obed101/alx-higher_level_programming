@@ -5,6 +5,7 @@ This module uses sqlalchemy to print table
 import sys
 import MySQLdb as sql
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 
@@ -17,7 +18,7 @@ def sqlalchemies():
     database = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@{}:{}/{}'.format(
         username, passwd, host, port, database), pool_pre_ping=True)
-    Session = sessionmaker.(bind=engine)
+    Session = sessionmaker(bind=engine)
     new_session = Session()
     states = new_session.query(State).order_by(State.id).all()
     new_session.close()
