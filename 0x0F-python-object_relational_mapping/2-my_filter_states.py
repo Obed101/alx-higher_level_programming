@@ -17,8 +17,7 @@ def select_states():
     connection = sql.connect(host=host, user=user,
                              passwd=passwd, db=sys.argv[3], port=port)
     cur = connection.cursor()
-    name = (name,)
-    sql_command = '''SELECT * FROM states WHERE
+    sql_command = '''SELECT * FROM states WHERE BINARY
     name = \'{}\' ORDER BY id ASC;'''.format(name)
     cur.execute(sql_command)
     result = cur.fetchall()
