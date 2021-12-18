@@ -18,7 +18,7 @@ def filter_cities():
                              passwd=passwd, db=sys.argv[3], port=port)
     cur = connection.cursor()
     state_name = sys.argv[4]
-    sql_cmd1 = 'SELECT states.name FROM cities LEFT '
+    sql_cmd1 = 'SELECT city.name FROM cities LEFT '
     sql_cmd2 = 'JOIN states ON cities.state_id = states.id ORDER BY cities.id;'
     cur.execute(sql_cmd1 + sql_cmd2)
     result = cur.fetchall()
