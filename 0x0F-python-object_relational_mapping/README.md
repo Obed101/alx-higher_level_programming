@@ -2,7 +2,7 @@
 
 ```
 executing databases in python
-inport MySQLdb as sql
+>>> import MySQLdb as sql
 
-sql.connect(....)
+>>> sql.connect(....)
 ```
