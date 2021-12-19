@@ -15,20 +15,16 @@ def filter_cities():
     username = sys.argv[1]
     passwd = sys.argv[2]
     database = sys.argv[3]
-    state1 = sys.argv[4]
     connection = sql.connect(host=host, user=username,
                              passwd=passwd, db=database, port=port)
     cur = connection.cursor()
-    cur.execute('SELECT c.name FROM cities c INNER JOIN states s ' +
-                'ON s.id = c.state_id WHERE ' +
-                'BINARY s.name = %s ' +
-                'ORDER BY c.id ASC;', [state1])
+    sql_cmd1 = 'SELECT cities.name FROM cities INNER '
+    sql_cmd2 = 'JOIN states ON states.id = cities.state_id '
+    sql_cmd3 = 'WHERE states.name = %s ORDER BY cities.id;'
+    cur.execute(sql_cmd1 + sql_cmd2 + sql_cmd3, [sys.argv[4]])
     result = cur.fetchall()
 
-    if result:
-        for states in result:
-            print(states, end="")
-        print()
+    print(', '.join(map(lambda x: x[0], result)))
     cur.close()
     connection.close()
 
