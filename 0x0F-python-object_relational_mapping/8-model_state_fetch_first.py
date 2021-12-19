@@ -10,25 +10,22 @@ from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import sessionmaker
 
 
-def display_first():
-    """This method connects to a database using sqlalchemy"""
-    host = "localhost"
-    port = 3306
+if __name__ == '__main__':
     username = sys.argv[1]
-    passwd = sys.argv[2]
-    database = sys.argv[3]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    host = 'localhost'
+    port = '3306'
+
     engine = create_engine('mysql+mysqldb://{}:{}@{}:{}/{}'.format(
-        username, passwd, host, port, database),
+                           username, password, host, port, db_name),
                            pool_pre_ping=True, poolclass=NullPool)
     Session = sessionmaker(bind=engine)
-    new_session = Session()
-    states = new_session.query(State).order_by(State.id).first()
-    new_session.close()
-    if states:
-        first1 = states.id + ": " + states.name
-    else:
-        first1 = "Nothing"
-    print(first1)
+    session = Session()
+    result = session.query(State).order_by(State.id).first()
+    session.close()
 
-if __name__ == '__main__':
-    display_first()
+    if result:
+        print('{}: {}'.format(result.id, result.name))
+    else:
+        print('Nothing')
