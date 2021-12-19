@@ -10,8 +10,8 @@ from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import sessionmaker
 
 
-def display_first():
-    """This method connects to a database using sqlalchemy"""
+if __name__ = '__main__':
+    """Making it unexecuted on import"""
     host = "localhost"
     port = 3306
     username = sys.argv[1]
@@ -29,6 +29,3 @@ def display_first():
     else:
         first1 = "Nothing"
     print(first1)
-
-if __name__ == '__main__':
-    display_first()
