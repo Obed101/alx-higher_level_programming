@@ -6,6 +6,6 @@ WHERE title NOT IN(
     ON ws.id = mg.show_id 
     INNER JOIN tv_genres
     ON tv_genres.id = mg.genre_id 
-    WHERE ws.name = 'Comedy'
+    WHERE tv)_genres.name = 'Comedy'
 ) 
 ORDER BY title ASC;
