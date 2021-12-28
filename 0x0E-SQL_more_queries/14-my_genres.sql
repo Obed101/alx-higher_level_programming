@@ -3,6 +3,6 @@ SELECT genres.name FROM tv_genres genres
 INNER JOIN tv_show_genres tg
 ON tg.genre_id = genres.id
 INNER JOIN tv_shows tvs
-ON tg.show_id = ts.id
-WHERE ts.title = "Dexter"
+ON tg.show_id = tvs.id
+WHERE tvs.title = "Dexter"
 ORDER BY genre.name ASC;
