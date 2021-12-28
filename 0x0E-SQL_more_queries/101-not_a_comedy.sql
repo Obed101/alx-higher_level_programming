@@ -1,7 +1,7 @@
 -- This script selects all genres not linked to the show selected
 SELECT title FROM tv_shows ws
 WHERE title NOT IN(
-	SELECT SELECT title FROM tv_shows ws
+	SELECT title FROM tv_shows ws
     INNER JOIN tv_show_genres mg
     ON ws.id = mg.show_id 
     INNER JOIN tv_genres
