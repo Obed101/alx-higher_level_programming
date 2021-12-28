@@ -4,5 +4,5 @@ INNER JOIN tv_show_genres tg
 ON ts.id = tg.show_id
 INNER JOIN tv_genres tvg
 ON tvg.id = tg.genre_id
-WHERE tvg.title = "Comedy"
+WHERE ts.title = "Comedy"
 ORDER BY ts.title ASC;
