@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-'''
+"""
 Changing the states to city
-'''
+"""
 
 from model_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
 
 
 class City(Base):
-    '''
+    """
     This is the class for city - with id and name
-    '''
+    """
     __tablename__ = 'cities'
     id = Column(Integer, unique=True, nullable=False,
                 autoincrement=True, primary_key=True)
