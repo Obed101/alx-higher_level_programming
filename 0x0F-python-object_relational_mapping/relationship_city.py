@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-""" This Module creates a cities Table """
 
 from model_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
