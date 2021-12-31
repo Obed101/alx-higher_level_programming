@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Creating a state and
+a city in the dtatabase
+"""
 
 from relationship_state import State, Base
 from relationship_city import City
