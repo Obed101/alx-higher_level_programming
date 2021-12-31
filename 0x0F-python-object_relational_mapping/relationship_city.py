@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" This module creates a relationship with the State
+for the cities
+"""
 
 from model_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
