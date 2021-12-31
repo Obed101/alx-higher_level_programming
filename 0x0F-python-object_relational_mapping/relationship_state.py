@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-""" This module does the SQL operation in more advanced way """
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
