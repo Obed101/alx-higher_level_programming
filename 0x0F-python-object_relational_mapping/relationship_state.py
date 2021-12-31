@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" This module creates a relationship with the cities
+child for the State
+"""
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
