@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""
-Changing the states to city
-"""
 
 from model_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
