@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     req = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(request) as web:
+        with urllib.request.urlopen(req) as web:
             print(web.read()).decode("ascii")
 
     except urllib.error.HTTPError as e:
