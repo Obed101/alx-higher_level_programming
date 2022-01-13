@@ -6,5 +6,5 @@ with lib.urlopen('https://intranet.hbtn.io/status') as ericob:
     view = ericob.read()
 print("Body response:")
 print("    - type: {}".format(type(view)))
-print("    - {}".format(view))
+print("    - content {}".format(view))
 print("    - utf8 content: {}".format(view.decode()))
