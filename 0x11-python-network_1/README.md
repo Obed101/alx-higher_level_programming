@@ -1,2 +1,3 @@
-#!/usr/bin/python3
-"""This script displays a staus"""
+# Working with servers in Python.
+
+## This folder contain more examples
