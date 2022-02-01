@@ -6,5 +6,5 @@ const method = 'GET';
 
 request(url, method, (err, data, body) => {
   if (err) console.log(err);
-  console.log(`code: ${response.statuscode}`);
+  console.log(`code: ${data.statuscode}`);
 });
